@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+
+<!-- News sources  section  -->
+{% block content %}
+<body>
+    
+</body>
+<div class="container">
+    <div class=jumbotron>
+        <h1> World News</h1>
+
+    </div>
+    {% for source in sources %}
+
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title" id="head">
+                    <p style="font-size: 200%;">{{ source.name}}</p>
+                </div>
+                <div class="text">
+                    <p>{{ source.description}}</p>
+                    <br>
+                    <a href="/news/{{ source.id }}"> <button class="button"> <span>Check News </span></button></a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    {% endfor %}
+</div>
+</body>
+    
+</body>
+<style>
+    
+    .container{
+        font-size: 12px;
+    }
+    *{
+      font-size: 105%;
+    }
+    .card{
+      border: 0.5px solid black;
+      border-radius: 5px;
+      padding: 5%;
+      margin: 5%;
+      text-align: center;
+      color:black;
+      width:250px;
+      height:480px;
+      background-color:burlywood;
+    }
+    #head{
+      font-weight: 50px;
+    }
+    .jumbotron{
+      background-color:bisque;
+    }
+    h1{
+      color:white;
+    }
+    .button {
+      
+  border-radius: 4px;
+  background-color:cadetblue;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 22px;
+  padding: 12px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+
+      
+    }
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -0px;
+      transition: 0.5s;
+    }
+    .button:hover span {
+      padding-right: 25px;
+    }
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+    
+    </style>
+{% endblock %}

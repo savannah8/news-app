@@ -1,6 +1,5 @@
 import unittest 
 from app.models import Headlines
-Headlines = headlines.Headlines
 
 class HeadlinesTest(unittest.TestCase):
   '''
@@ -14,7 +13,8 @@ class HeadlinesTest(unittest.TestCase):
     self.new_News = Headlines('bbc-news','BBC News', 'your trusted source for breaking news','a rasher of bacon ups cancer risk','Image','https://www.bbc.com/news/health-47947965')
 
   def test_instance(self):
-      self.assertTrue(isinstance(self.new_Headlines,Headlines))
+    self.assertTrue(isinstance(self.new_News,Headlines))
 
 
-if __name__ == ' __main__':
+if __name__ == '__main__':
+  unittest.main()
